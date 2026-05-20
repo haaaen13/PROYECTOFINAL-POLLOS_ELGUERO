@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2ROkxwgOChY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hankr\\Downloads\\PROYECTOFINAL-POLLOS_ELGUERO\\PROYECTOFINAL-POLLOS_ELGUERO.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hankr\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.6\\microsoft.aspnetcore.openapi.10.0.6.nupkg.sha512",
+    "C:\\Users\\hankr\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

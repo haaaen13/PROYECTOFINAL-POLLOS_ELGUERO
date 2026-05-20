@@ -1,0 +1,6 @@
+@PROYECTOFINAL_POLLOS_ELGUERO_HostAddress = http://localhost:5168
+
+GET {{PROYECTOFINAL_POLLOS_ELGUERO_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
