@@ -12,5 +12,5 @@ public class User
 
     public UserRole Role { get; set; } = UserRole.Empleado;
 
-    
+    public Empleado? Empleado { get; set; }
 }

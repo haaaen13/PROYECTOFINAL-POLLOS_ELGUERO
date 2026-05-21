@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hankr\\Downloads\\PROYECTOFINAL-POLLOS_ELGUERO\\PROYECTOFINAL-POLLOS_ELGUERO.csproj": {}
+    "C:\\Users\\Ramir\\OneDrive\\Desktop\\Tareas Semestre 6\\PROYECTOFINAL-POLLOS_ELGUERO\\PROYECTOFINAL-POLLOS_ELGUERO.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hankr\\Downloads\\PROYECTOFINAL-POLLOS_ELGUERO\\PROYECTOFINAL-POLLOS_ELGUERO.csproj": {
+    "C:\\Users\\Ramir\\OneDrive\\Desktop\\Tareas Semestre 6\\PROYECTOFINAL-POLLOS_ELGUERO\\PROYECTOFINAL-POLLOS_ELGUERO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hankr\\Downloads\\PROYECTOFINAL-POLLOS_ELGUERO\\PROYECTOFINAL-POLLOS_ELGUERO.csproj",
+        "projectUniqueName": "C:\\Users\\Ramir\\OneDrive\\Desktop\\Tareas Semestre 6\\PROYECTOFINAL-POLLOS_ELGUERO\\PROYECTOFINAL-POLLOS_ELGUERO.csproj",
         "projectName": "PROYECTOFINAL-POLLOS_ELGUERO",
-        "projectPath": "C:\\Users\\hankr\\Downloads\\PROYECTOFINAL-POLLOS_ELGUERO\\PROYECTOFINAL-POLLOS_ELGUERO.csproj",
-        "packagesPath": "C:\\Users\\hankr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hankr\\Downloads\\PROYECTOFINAL-POLLOS_ELGUERO\\obj\\",
+        "projectPath": "C:\\Users\\Ramir\\OneDrive\\Desktop\\Tareas Semestre 6\\PROYECTOFINAL-POLLOS_ELGUERO\\PROYECTOFINAL-POLLOS_ELGUERO.csproj",
+        "packagesPath": "C:\\Users\\Ramir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ramir\\OneDrive\\Desktop\\Tareas Semestre 6\\PROYECTOFINAL-POLLOS_ELGUERO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hankr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ramir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -74,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
