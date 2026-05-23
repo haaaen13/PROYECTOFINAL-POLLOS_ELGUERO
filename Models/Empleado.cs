@@ -32,5 +32,5 @@ public class Empleado
 
     public User? User { get; set; }
 
-    
+    public ICollection<Venta> Ventas { get; set; } = new List<Venta>();
 }
