@@ -1,0 +1,10 @@
+namespace backend.Dtos.Productos;
+
+public class UpdateProductoDto
+{
+    public string? Nombre { get; set; }
+
+    public string? Descripcion { get; set; }
+
+    public decimal? Precio { get; set; }
+}
