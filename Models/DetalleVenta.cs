@@ -14,5 +14,5 @@ public class DetalleVenta
 
     public Venta Sale { get; set; } = null!;
 
-
+    public Producto Producto { get; set; } = null!;
 }
