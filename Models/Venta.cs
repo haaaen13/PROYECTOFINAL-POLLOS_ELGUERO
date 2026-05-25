@@ -15,7 +15,7 @@ public class Venta
 
     public Empleado Empleado { get; set; } = null!;
 
-
+    public Sucursal Sucursal { get; set; } = null!;
 
     public ICollection<DetalleVenta> Details { get; set; }
         = new List<DetalleVenta>();
