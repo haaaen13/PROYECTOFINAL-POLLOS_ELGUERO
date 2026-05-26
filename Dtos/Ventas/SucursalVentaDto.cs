@@ -1,0 +1,8 @@
+namespace backend.Dtos.Ventas;
+
+public class SucursalVentaDto
+{
+    public int Id { get; set; }
+
+    public string Nombre { get; set; } = string.Empty;
+}
