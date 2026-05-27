@@ -1,0 +1,184 @@
+.movimiento-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 999;
+}
+
+.movimiento-modal-container {
+  width: 100%;
+
+  max-width: 520px;
+
+  background: white;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  border: 1px solid #ececec;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.movimiento-modal-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 20px 24px;
+
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.movimiento-modal-header h2 {
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #111111;
+}
+
+.movimiento-modal-header button {
+  width: 36px;
+
+  height: 36px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #f5f5f5;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.movimiento-modal-body {
+  padding: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.movimiento-form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+}
+
+.movimiento-form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.movimiento-form-group label {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #222222;
+}
+
+.movimiento-form-group input,
+.movimiento-form-group select,
+.movimiento-form-group textarea {
+  width: 100%;
+
+  border: 1px solid #e5e5e5;
+
+  border-radius: 14px;
+
+  padding: 12px 14px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  resize: none;
+
+  transition: all 0.2s ease;
+}
+
+.movimiento-form-group input:focus,
+.movimiento-form-group select:focus,
+.movimiento-form-group textarea:focus {
+  border-color: #111111;
+}
+
+.movimiento-modal-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 4px;
+}
+
+.movimiento-btn-cancel,
+.movimiento-btn-save {
+  height: 44px;
+
+  padding: 0 20px;
+
+  border-radius: 12px;
+
+  border: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.movimiento-btn-cancel {
+  background: #f3f3f3;
+
+  color: #444444;
+}
+
+.movimiento-btn-save {
+  background: #111111;
+
+  color: white;
+}
+
+.movimiento-btn-save:hover {
+  background: #222222;
+}
+
+@media (max-width: 600px) {
+  .movimiento-modal-container {
+    width: 95%;
+  }
+
+  .movimiento-form-row {
+    grid-template-columns: 1fr;
+  }
+}

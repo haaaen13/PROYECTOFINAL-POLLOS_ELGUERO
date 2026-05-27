@@ -1,0 +1,67 @@
+.movimientos-page {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.movimientos-table {
+  border-radius: 18px !important;
+
+  overflow: hidden;
+
+  border: 1px solid #ececec;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+}
+
+.movimiento-concepto {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.movimiento-title {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #111111;
+}
+
+.movimiento-id {
+  font-size: 12px;
+
+  color: #888888;
+}
+
+.movimiento-badge {
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.movimiento-entrada {
+  background: #edfdf3;
+
+  color: #15803d;
+}
+
+.movimiento-salida {
+  background: #fef2f2;
+
+  color: #dc2626;
+}
+
+.movimiento-monto {
+  font-weight: 700;
+
+  color: #111111;
+}
