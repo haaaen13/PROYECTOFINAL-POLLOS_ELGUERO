@@ -1,0 +1,109 @@
+.table-toolbar {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.toolbar-left h2 {
+  font-size: 22px;
+
+  font-weight: 500;
+
+  color: #292929;
+
+  padding-left: 25px;
+
+  letter-spacing: -0.04em;
+}
+
+.toolbar-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.search-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: #f7f7f7;
+
+  border: 1px solid #ececec;
+
+  border-radius: 12px;
+
+  padding: 10px 14px;
+
+  min-width: 240px;
+
+  color: #8b8b8b;
+}
+
+.search-box input {
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  width: 100%;
+
+  font-size: 14px;
+}
+
+.filter-btn,
+.add-btn {
+  height: 42px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.filter-btn {
+  background: #f7f7f7;
+
+  border: 1px solid #ececec;
+
+  color: #292929;
+}
+
+.filter-btn:hover {
+  background: #efefef;
+}
+
+.table-toolbar .add-btn {
+  background: #292929;
+  color: white;
+}
+
+.add-btn:hover {
+  opacity: 0.9;
+}
