@@ -31,18 +31,36 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<User>().HasIndex(u => u.Username).IsUnique();
+        modelBuilder.Entity<User>()
+            .HasIndex(u => u.Username)
+            .IsUnique();
 
-        modelBuilder
-            .Entity<User>()
+        modelBuilder.Entity<User>()
             .HasOne(u => u.Empleado)
             .WithOne(e => e.User)
             .HasForeignKey<Empleado>(e => e.UserId);
 
-        modelBuilder.Entity<Producto>().Property(p => p.Precio).HasPrecision(10, 2);
+        modelBuilder.Entity<Producto>()
+            .Property(p => p.Precio)
+            .HasPrecision(10, 2);
 
-        modelBuilder.Entity<Venta>().Property(v => v.Total).HasPrecision(10, 2);
+        modelBuilder.Entity<Venta>()
+            .Property(v => v.Total)
+            .HasPrecision(10, 2);
 
-        modelBuilder.Entity<DetalleVenta>().Property(d => d.PrecioTotal).HasPrecision(10, 2);
+        modelBuilder.Entity<DetalleVenta>()
+            .Property(d => d.PrecioTotal)
+            .HasPrecision(10, 2);
+
+        modelBuilder.Entity<CierreCaja>()
+            .HasOne(c => c.TurnoCaja)
+            .WithMany()
+            .HasForeignKey(c => c.TurnoCajaId)
+            .OnDelete(DeleteBehavior.NoAction);
+        modelBuilder.Entity<MovimientoCaja>()
+            .HasOne(m => m.TurnoCaja)
+            .WithMany()
+            .HasForeignKey(m => m.TurnoCajaId)
+            .OnDelete(DeleteBehavior.NoAction);
     }
 }

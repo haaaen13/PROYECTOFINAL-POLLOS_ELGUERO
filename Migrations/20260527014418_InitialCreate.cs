@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
 {
     /// <inheritdoc />
-    public partial class MigracionInicial : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,14 +15,14 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
                 name: "Productos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nombre = table.Column<string>(type: "TEXT", nullable: false),
-                    Descripcion = table.Column<string>(type: "TEXT", nullable: true),
-                    Precio = table.Column<decimal>(type: "TEXT", precision: 10, scale: 2, nullable: false),
-                    ImagenUrl = table.Column<string>(type: "TEXT", nullable: false),
-                    Categoria = table.Column<int>(type: "INTEGER", nullable: false),
-                    Activo = table.Column<bool>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Precio = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
+                    ImagenUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Categoria = table.Column<int>(type: "int", nullable: false),
+                    Activo = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -33,15 +33,15 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
                 name: "Sucursales",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nombre = table.Column<string>(type: "TEXT", nullable: false),
-                    Direccion = table.Column<string>(type: "TEXT", nullable: false),
-                    Telefono = table.Column<string>(type: "TEXT", nullable: false),
-                    Encargado = table.Column<string>(type: "TEXT", nullable: false),
-                    Horario = table.Column<string>(type: "TEXT", nullable: false),
-                    Activa = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ImagenUrl = table.Column<string>(type: "TEXT", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Telefono = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Encargado = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Horario = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Activa = table.Column<bool>(type: "bit", nullable: false),
+                    ImagenUrl = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -52,11 +52,11 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Username = table.Column<string>(type: "TEXT", nullable: false),
-                    HashedPassword = table.Column<string>(type: "TEXT", nullable: false),
-                    Role = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Username = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    HashedPassword = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Role = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,20 +67,20 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
                 name: "Empleados",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Nombre = table.Column<string>(type: "TEXT", nullable: false),
-                    ApellidoPaterno = table.Column<string>(type: "TEXT", nullable: false),
-                    ApellidoMaterno = table.Column<string>(type: "TEXT", nullable: false),
-                    Puesto = table.Column<string>(type: "TEXT", nullable: false),
-                    Telefono = table.Column<string>(type: "TEXT", nullable: false),
-                    Correo = table.Column<string>(type: "TEXT", nullable: false),
-                    Sexo = table.Column<int>(type: "INTEGER", nullable: false),
-                    FechaNacimiento = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Direccion = table.Column<string>(type: "TEXT", nullable: false),
-                    ContratadoEl = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Activo = table.Column<bool>(type: "INTEGER", nullable: false),
-                    UserId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ApellidoPaterno = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ApellidoMaterno = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Puesto = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Telefono = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Correo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Sexo = table.Column<int>(type: "int", nullable: false),
+                    FechaNacimiento = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContratadoEl = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Activo = table.Column<bool>(type: "bit", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -96,14 +96,14 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
                 name: "TurnosCaja",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    FechaApertura = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    FechaCierre = table.Column<DateTime>(type: "TEXT", nullable: true),
-                    FondoInicial = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Abierto = table.Column<bool>(type: "INTEGER", nullable: false),
-                    EmpleadoId = table.Column<int>(type: "INTEGER", nullable: false),
-                    SucursalId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FechaApertura = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    FechaCierre = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    FondoInicial = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Abierto = table.Column<bool>(type: "bit", nullable: false),
+                    EmpleadoId = table.Column<int>(type: "int", nullable: false),
+                    SucursalId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -126,22 +126,23 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
                 name: "CierresCaja",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    FechaCierre = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    FondoInicial = table.Column<decimal>(type: "TEXT", nullable: false),
-                    VentasEfectivo = table.Column<decimal>(type: "TEXT", nullable: false),
-                    VentasTarjeta = table.Column<decimal>(type: "TEXT", nullable: false),
-                    VentasTransferencia = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Entradas = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Salidas = table.Column<decimal>(type: "TEXT", nullable: false),
-                    EfectivoEsperado = table.Column<decimal>(type: "TEXT", nullable: false),
-                    EfectivoReal = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Diferencia = table.Column<decimal>(type: "TEXT", nullable: false),
-                    TotalVentas = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Observaciones = table.Column<string>(type: "TEXT", nullable: true),
-                    TurnoCajaId = table.Column<int>(type: "INTEGER", nullable: false),
-                    EmpleadoId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FechaCierre = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    FondoInicial = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    VentasEfectivo = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    VentasTarjeta = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    VentasTransferencia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Entradas = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Salidas = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    EfectivoEsperado = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    EfectivoReal = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Diferencia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    TotalVentas = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Observaciones = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TurnoCajaId = table.Column<int>(type: "int", nullable: false),
+                    EmpleadoId = table.Column<int>(type: "int", nullable: false),
+                    TurnoCajaId1 = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -156,22 +157,27 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
                         name: "FK_CierresCaja_TurnosCaja_TurnoCajaId",
                         column: x => x.TurnoCajaId,
                         principalTable: "TurnosCaja",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_CierresCaja_TurnosCaja_TurnoCajaId1",
+                        column: x => x.TurnoCajaId1,
+                        principalTable: "TurnosCaja",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
                 name: "MovimientosCaja",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Fecha = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Monto = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Tipo = table.Column<int>(type: "INTEGER", nullable: false),
-                    Concepto = table.Column<string>(type: "TEXT", nullable: false),
-                    TurnoCajaId = table.Column<int>(type: "INTEGER", nullable: false),
-                    EmpleadoId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Monto = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Tipo = table.Column<int>(type: "int", nullable: false),
+                    Concepto = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TurnoCajaId = table.Column<int>(type: "int", nullable: false),
+                    EmpleadoId = table.Column<int>(type: "int", nullable: false),
+                    TurnoCajaId1 = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -186,22 +192,26 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
                         name: "FK_MovimientosCaja_TurnosCaja_TurnoCajaId",
                         column: x => x.TurnoCajaId,
                         principalTable: "TurnosCaja",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_MovimientosCaja_TurnosCaja_TurnoCajaId1",
+                        column: x => x.TurnoCajaId1,
+                        principalTable: "TurnosCaja",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
                 name: "Ventas",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    FechaVenta = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    Total = table.Column<decimal>(type: "TEXT", precision: 10, scale: 2, nullable: false),
-                    TurnoCajaId = table.Column<int>(type: "INTEGER", nullable: false),
-                    MetodoPago = table.Column<int>(type: "INTEGER", nullable: false),
-                    Cancelada = table.Column<bool>(type: "INTEGER", nullable: false),
-                    SucursalId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FechaVenta = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Total = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
+                    TurnoCajaId = table.Column<int>(type: "int", nullable: false),
+                    MetodoPago = table.Column<int>(type: "int", nullable: false),
+                    Cancelada = table.Column<bool>(type: "bit", nullable: false),
+                    SucursalId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -223,12 +233,12 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
                 name: "DetalleVentas",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Cantidad = table.Column<decimal>(type: "TEXT", nullable: false),
-                    PrecioTotal = table.Column<decimal>(type: "TEXT", precision: 10, scale: 2, nullable: false),
-                    VentaId = table.Column<int>(type: "INTEGER", nullable: false),
-                    ProductoId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Cantidad = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    PrecioTotal = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
+                    VentaId = table.Column<int>(type: "int", nullable: false),
+                    ProductoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -255,8 +265,14 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_CierresCaja_TurnoCajaId",
                 table: "CierresCaja",
-                column: "TurnoCajaId",
-                unique: true);
+                column: "TurnoCajaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CierresCaja_TurnoCajaId1",
+                table: "CierresCaja",
+                column: "TurnoCajaId1",
+                unique: true,
+                filter: "[TurnoCajaId1] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DetalleVentas_ProductoId",
@@ -272,7 +288,8 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
                 name: "IX_Empleados_UserId",
                 table: "Empleados",
                 column: "UserId",
-                unique: true);
+                unique: true,
+                filter: "[UserId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MovimientosCaja_EmpleadoId",
@@ -283,6 +300,11 @@ namespace PROYECTOFINAL_POLLOS_ELGUERO.Migrations
                 name: "IX_MovimientosCaja_TurnoCajaId",
                 table: "MovimientosCaja",
                 column: "TurnoCajaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MovimientosCaja_TurnoCajaId1",
+                table: "MovimientosCaja",
+                column: "TurnoCajaId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TurnosCaja_EmpleadoId",
