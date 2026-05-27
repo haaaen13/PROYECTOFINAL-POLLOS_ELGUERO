@@ -1,0 +1,129 @@
+.pos-layout {
+  width: 100%;
+
+  display: flex;
+
+  align-items: stretch;
+
+  gap: 0;
+}
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos-disponibles {
+  width: calc(100% - 240px);
+
+  padding-right: 24px;
+}
+
+/* Grid más compacto SOLO POS */
+
+.productos-disponibles .productos-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+
+  margin-top: 24px;
+}
+
+/* Cards más pequeñas SOLO POS */
+
+.productos-disponibles .producto-card {
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+.productos-disponibles .producto-image-wrapper {
+  height: 90px;
+}
+
+.productos-disponibles .producto-content {
+  padding: 10px;
+
+  gap: 10px;
+}
+
+.productos-disponibles .producto-title {
+  font-size: 14px;
+
+  margin-bottom: 2px;
+}
+
+.productos-disponibles .producto-price {
+  font-size: 16px;
+}
+
+.productos-disponibles .producto-btn {
+  height: 32px;
+
+  font-size: 12px;
+}
+
+/* =========================
+   PANEL DERECHO
+========================= */
+
+.pos-resumen {
+  width: 240px;
+
+  height: 100vh;
+
+  position: sticky;
+
+  top: 0;
+
+  background: #ffffff;
+
+  border-left: 1px solid #ececec;
+
+  padding: 24px 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  overflow-y: auto;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1400px) {
+  .productos-disponibles .productos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .pos-layout {
+    flex-direction: column;
+  }
+
+  .productos-disponibles {
+    width: 100%;
+
+    padding-right: 0;
+  }
+
+  .pos-resumen {
+    width: 100%;
+
+    height: auto;
+
+    position: relative;
+
+    border-left: none;
+
+    border-top: 1px solid #ececec;
+  }
+}

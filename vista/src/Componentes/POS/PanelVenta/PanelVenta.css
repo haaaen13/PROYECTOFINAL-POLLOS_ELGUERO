@@ -1,0 +1,205 @@
+.pos-resumen {
+  width: 380px;
+
+  height: 100vh;
+
+  position: sticky;
+  top: 0;
+
+  background: white;
+
+  border-left: 1px solid #ececec;
+
+  padding: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.pos-resumen-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 24px;
+
+  flex-shrink: 0;
+}
+
+.pos-resumen-header h2 {
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+.pos-items-count {
+  font-size: 14px;
+
+  color: #777;
+}
+
+/* =========================
+   ITEMS SCROLL
+========================= */
+
+.pos-resumen-items {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  overflow-y: auto;
+
+  min-height: 0;
+
+  padding-right: 4px;
+}
+
+/* Scrollbar */
+
+.pos-resumen-items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pos-resumen-items::-webkit-scrollbar-thumb {
+  background: #d6d6d6;
+
+  border-radius: 20px;
+}
+
+/* =========================
+   ITEM
+========================= */
+
+.pos-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 14px;
+
+  border: 1px solid #ececec;
+
+  border-radius: 14px;
+
+  flex-shrink: 0;
+}
+
+.pos-item h4 {
+  font-size: 15px;
+
+  margin-bottom: 4px;
+}
+
+.pos-item p {
+  font-size: 13px;
+
+  color: #777;
+}
+
+/* =========================
+   FOOTER FIJO
+========================= */
+
+.pos-footer {
+  margin-top: 24px;
+
+  flex-shrink: 0;
+
+  background: white;
+}
+
+/* =========================
+   TOTALES
+========================= */
+
+.pos-resumen-totales {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.total-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 15px;
+}
+
+.total-row.final {
+  font-size: 20px;
+
+  font-weight: 700;
+
+  padding-top: 12px;
+
+  border-top: 1px solid #ececec;
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.pos-actions {
+  margin-top: 24px;
+
+  display: flex;
+
+  gap: 12px;
+}
+
+.btn-cancelar,
+.btn-cobrar {
+  flex: 1;
+
+  height: 52px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.btn-cancelar {
+  background: #f3f3f3;
+
+  color: #444;
+}
+
+.btn-cancelar:hover {
+  background: #ebebeb;
+}
+
+.btn-cobrar {
+  background: #111;
+
+  color: white;
+}
+
+.btn-cobrar:hover {
+  background: #222;
+}

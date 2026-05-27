@@ -1,0 +1,244 @@
+/* ModalCobro.css */
+
+.modal-cobro-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  z-index: 999;
+}
+
+.modal-cobro {
+  width: 100%;
+
+  max-width: 460px;
+
+  background: white;
+
+  border: 1px solid #ececec;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+
+  animation: modalFade 0.2s ease;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.modal-cobro-header {
+  padding: 24px;
+
+  border-bottom: 1px solid #ececec;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.modal-label {
+  font-size: 13px;
+
+  color: #777;
+
+  font-weight: 500;
+}
+
+.modal-cobro-header h2 {
+  margin-top: 4px;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: #111111;
+}
+
+/* =========================
+   BODY
+========================= */
+
+.modal-cobro-body {
+  padding: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+/* =========================
+   RESUMEN
+========================= */
+
+.modal-resumen {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+  padding: 18px;
+
+  border: 1px solid #ececec;
+
+  border-radius: 16px;
+
+  background: #fafafa;
+}
+
+.modal-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-size: 14px;
+
+  color: #444;
+}
+
+.modal-row.total {
+  padding-top: 14px;
+
+  border-top: 1px solid #ececec;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  color: #111111;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.modal-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.modal-group label {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #111111;
+}
+
+.modal-group select {
+  width: 100%;
+
+  height: 50px;
+
+  border: 1px solid #ececec;
+
+  border-radius: 14px;
+
+  padding: 0 14px;
+
+  background: white;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.modal-group select:focus {
+  border-color: #cfcfcf;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.modal-cobro-footer {
+  padding: 20px 24px;
+
+  border-top: 1px solid #ececec;
+
+  display: flex;
+
+  gap: 12px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-cerrar-modal,
+.btn-confirmar-modal {
+  flex: 1;
+
+  height: 50px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.btn-cerrar-modal {
+  background: #f3f3f3;
+
+  color: #444444;
+}
+
+.btn-cerrar-modal:hover {
+  background: #ebebeb;
+}
+
+.btn-confirmar-modal {
+  background: #111111;
+
+  color: white;
+}
+
+.btn-confirmar-modal:hover {
+  background: #222222;
+}
