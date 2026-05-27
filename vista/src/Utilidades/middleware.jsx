@@ -6,7 +6,7 @@ export function setAuthToken(funcion) {
   getToken = funcion;
 }
 
-const api = axios.create({ baseURL: "http://localhost:5167/" });
+const api = axios.create({ baseURL: import.meta.env.VITE_API_URL });
 
 api.interceptors.request.use((config) => {
   const token = getToken();
