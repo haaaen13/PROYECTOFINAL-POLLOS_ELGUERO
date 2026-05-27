@@ -1,0 +1,37 @@
+/* CierreCaja.css */
+
+.cierres-page {
+  width: 100%;
+}
+
+.cierres-table {
+  border-radius: 20px !important;
+
+  overflow: hidden;
+
+  border: 1px solid #ececec !important;
+
+  box-shadow: none !important;
+}
+
+.cierre-estado {
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.cierre-correcto {
+  background: #eefaf0;
+
+  color: #1f7a35;
+}
+
+.cierre-faltante {
+  background: #fff2f2;
+
+  color: #c62828;
+}
