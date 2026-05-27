@@ -1,0 +1,57 @@
+.tabla-container {
+  width: 100%;
+}
+
+.custom-table-container {
+  border-radius: 24px !important;
+
+  border: 1px solid #ececec !important;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.04),
+    0 2px 8px rgba(0, 0, 0, 0.03) !important;
+
+  overflow: hidden;
+
+  background: white !important;
+}
+
+/* HEADER */
+
+.MuiTableHead-root {
+  background: linear-gradient(to bottom, #fafafa, #f4f4f4);
+}
+
+.MuiTableHead-root .MuiTableCell-root {
+  font-size: 13px !important;
+
+  font-weight: 700 !important;
+
+  color: #666666 !important;
+
+  border-bottom: 1px solid #ececec !important;
+
+  padding: 14px 20px !important;
+}
+
+/* ROWS */
+
+.MuiTableBody-root .MuiTableCell-root {
+  padding: 14px 20px !important;
+
+  border-bottom: 1px solid #f5f5f5 !important;
+
+  font-size: 14px;
+
+  color: #111111;
+}
+
+.MuiTableBody-root .MuiTableRow-root {
+  transition: all 0.2s ease;
+}
+
+.MuiTableBody-root .MuiTableRow-root:hover {
+  background: #fcfcfc;
+
+  transform: scale(1.002);
+}

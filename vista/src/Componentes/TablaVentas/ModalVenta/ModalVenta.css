@@ -1,0 +1,114 @@
+.venta-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.venta-modal-container {
+  width: 900px;
+  max-width: 95%;
+  max-height: 88vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+}
+
+.venta-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.venta-modal-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.venta-modal-header button {
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.venta-id {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.venta-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.venta-info-card {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.venta-label {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.venta-detalles {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.venta-detalles-header,
+.venta-detalle-row {
+  display: grid;
+  grid-template-columns: 1fr 120px 120px;
+  gap: 12px;
+  padding: 14px 18px;
+}
+
+.venta-detalles-header {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+.venta-detalle-row {
+  border-top: 1px solid #e5e7eb;
+}
+
+.venta-footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.venta-total {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.venta-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.venta-checkbox input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
