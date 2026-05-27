@@ -1,0 +1,166 @@
+/* ModalProducto.css */
+
+.modal-producto {
+  width: 100%;
+
+  max-width: 720px;
+
+  background: white;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  padding: 20px 24px;
+
+  border-bottom: 1px solid #efefef;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.modal-header h2 {
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+.modal-header button {
+  border: none;
+
+  background: #f4f4f4;
+
+  width: 36px;
+
+  height: 36px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.modal-body {
+  padding: 24px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.form-group.full {
+  grid-column: span 2;
+}
+
+.form-group label {
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  border: 1px solid #e5e5e5;
+
+  border-radius: 14px;
+
+  padding: 12px 14px;
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.form-row {
+  display: flex;
+
+  gap: 16px;
+}
+
+.checkbox-group {
+  grid-column: span 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.modal-footer {
+  padding: 20px 24px;
+
+  border-top: 1px solid #efefef;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+}
+
+.cancel-btn,
+.save-btn {
+  height: 44px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.cancel-btn {
+  background: #f3f3f3;
+}
+
+.save-btn {
+  background: #111111;
+
+  color: white;
+}
+
+@media (max-width: 700px) {
+  .modal-producto {
+    width: 95%;
+  }
+
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+
+  .checkbox-group {
+    grid-column: span 1;
+  }
+}
