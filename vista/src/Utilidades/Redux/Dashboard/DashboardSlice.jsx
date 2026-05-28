@@ -34,26 +34,16 @@ const DashboardSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-
-      /*
-        OBTENER DASHBOARD
-      */
-
       .addCase(obtenerDashboard.pending, (state) => {
         state.loading = true;
-
         state.error = null;
       })
-
       .addCase(obtenerDashboard.fulfilled, (state, action) => {
         state.loading = false;
-
         state.dashboard = action.payload;
       })
-
       .addCase(obtenerDashboard.rejected, (state, action) => {
         state.loading = false;
-
         state.error = action.payload?.error || "Error al cargar dashboard";
       });
   },

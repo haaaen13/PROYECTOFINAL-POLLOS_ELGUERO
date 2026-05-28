@@ -1,5 +1,3 @@
-// VentasController.cs
-
 using System.Security.Claims;
 using backend.Data;
 using backend.Dtos.Ventas;
@@ -21,10 +19,6 @@ public class VentasController : ControllerBase
         _contexto = contexto;
     }
 
-    /*
-        Obtener empleado desde JWT
-    */
-
     private int ObtenerEmpleadoId()
     {
         var claim = User.FindFirst("EmpleadoId");
@@ -36,11 +30,6 @@ public class VentasController : ControllerBase
 
         return int.Parse(claim.Value);
     }
-
-    /*
-        GET
-        api/ventas
-    */
 
     [HttpGet]
     public List<VentaDtoSimple> GetVentas()
@@ -82,10 +71,6 @@ public class VentasController : ControllerBase
     {
         int empleadoId = ObtenerEmpleadoId();
 
-        /*
-            Buscar turno abierto
-        */
-
         var turno = await _contexto.TurnosCaja.FirstOrDefaultAsync(t =>
             t.EmpleadoId == empleadoId && t.Abierto
         );
@@ -94,10 +79,6 @@ public class VentasController : ControllerBase
         {
             return BadRequest(new { error = "No existe un turno abierto" });
         }
-
-        /*
-            Obtener ventas del turno
-        */
 
         var ventas = await _contexto
             .Ventas.Include(v => v.TurnoCaja)
@@ -140,19 +121,10 @@ public class VentasController : ControllerBase
         return Ok(ventas);
     }
 
-    /*
-        POST
-        api/ventas
-    */
-
     [HttpPost]
     public async Task<ActionResult<VentaDto>> PostVenta(CreateVentaDto dto)
     {
         int empleadoId = ObtenerEmpleadoId();
-
-        /*
-            Obtener turno abierto
-        */
 
         var turno = await _contexto.TurnosCaja.FirstOrDefaultAsync(t =>
             t.EmpleadoId == empleadoId && t.Abierto
@@ -162,10 +134,6 @@ public class VentasController : ControllerBase
         {
             return BadRequest(new { error = "No existe un turno abierto" });
         }
-
-        /*
-            Crear venta
-        */
 
         var venta = new Venta
         {
@@ -177,10 +145,6 @@ public class VentasController : ControllerBase
 
             Cancelada = false,
         };
-
-        /*
-            Crear detalles
-        */
 
         decimal total = 0;
 
@@ -209,10 +173,6 @@ public class VentasController : ControllerBase
         _contexto.Ventas.Add(venta);
 
         await _contexto.SaveChangesAsync();
-
-        /*
-            Retornar DTO
-        */
 
         return Ok(
             new VentaDto
@@ -249,11 +209,6 @@ public class VentasController : ControllerBase
         );
     }
 
-    /*
-        PATCH
-        api/ventas/cancelar/{id}
-    */
-
     [HttpPatch("cancelar/{id}")]
     public async Task<IActionResult> CancelarVenta(int id)
     {
@@ -270,11 +225,6 @@ public class VentasController : ControllerBase
 
         return Ok();
     }
-
-    /*
-    GET
-    api/ventas/{id}
-*/
 
     [HttpGet("{id}")]
     public async Task<ActionResult<VentaDto>> GetVenta(int id)

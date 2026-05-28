@@ -61,20 +61,12 @@ namespace backend.Controllers
         [HttpPost]
         public ActionResult<EmpleadoResponseDto> PostEmpleado(CreateEmpleadoDto newEmpleado)
         {
-            /*
-                Validar username único
-            */
-
             bool existeUsuario = _contexto.Users.Any(u => u.Username == newEmpleado.Username);
 
             if (existeUsuario)
             {
                 return BadRequest(new { error = "El nombre de usuario ya existe" });
             }
-
-            /*
-                Crear usuario
-            */
 
             var user = new User
             {
@@ -88,10 +80,6 @@ namespace backend.Controllers
             _contexto.Users.Add(user);
 
             _contexto.SaveChanges();
-
-            /*
-                Crear empleado
-            */
 
             var empleado = new Empleado
             {
@@ -121,10 +109,6 @@ namespace backend.Controllers
             _contexto.Empleados.Add(empleado);
 
             _contexto.SaveChanges();
-
-            /*
-                Response
-            */
 
             return Ok(
                 new EmpleadoResponseDto

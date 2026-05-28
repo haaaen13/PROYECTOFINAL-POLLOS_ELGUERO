@@ -1,5 +1,3 @@
-// TurnosCajaSlice.js
-
 import { createSlice } from "@reduxjs/toolkit";
 
 import {
@@ -24,43 +22,26 @@ const TurnosCajaSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-
-      /*
-        OBTENER TURNO
-      */
-
       .addCase(obtenerTurnoActivo.pending, (state) => {
         state.loading = true;
       })
-
       .addCase(obtenerTurnoActivo.fulfilled, (state, action) => {
         state.loading = false;
-
         state.TurnoActivo = action.payload;
       })
-
       .addCase(obtenerTurnoActivo.rejected, (state) => {
         state.loading = false;
-
         state.TurnoActivo = null;
       })
-
-      /*
-        ABRIR TURNO
-      */
-
       .addCase(abrirTurno.pending, (state) => {
         state.loading = true;
       })
-
       .addCase(abrirTurno.fulfilled, (state, action) => {
         state.loading = false;
         state.TurnoActivo = action.payload;
       })
-
       .addCase(abrirTurno.rejected, (state, action) => {
         state.loading = false;
-
         state.error = action.payload?.error;
       })
       .addCase(listarTurnosActivos.pending, (state) => {
@@ -70,7 +51,6 @@ const TurnosCajaSlice = createSlice({
         state.loading = false;
         state.TurnosActivos = action.payload;
       })
-
       .addCase(listarTurnosActivos.rejected, (state) => {
         state.loading = false;
         state.TurnoActivo = null;

@@ -16,8 +16,6 @@
   background: white !important;
 }
 
-/* HEADER */
-
 .MuiTableHead-root {
   background: linear-gradient(to bottom, #fafafa, #f4f4f4);
 }
@@ -33,8 +31,6 @@
 
   padding: 14px 20px !important;
 }
-
-/* ROWS */
 
 .MuiTableBody-root .MuiTableCell-root {
   padding: 14px 20px !important;

@@ -1,5 +1,3 @@
-// Dtos/CierreCaja/CrearCierreCajaDto.cs
-
 namespace backend.Dtos.CierreCaja;
 
 public class CrearCierreCajaDto

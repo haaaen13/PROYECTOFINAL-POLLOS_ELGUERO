@@ -1,12 +1,6 @@
-// VentasAction.js
-
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import api from "../../middleware";
-
-/*
-  LISTAR
-*/
 
 export const listarVentas = createAsyncThunk(
   "ventas/listar",
@@ -21,10 +15,6 @@ export const listarVentas = createAsyncThunk(
   },
 );
 
-/*
-  BUSCAR
-*/
-
 export const buscarVenta = createAsyncThunk(
   "ventas/buscar",
   async (id, { rejectWithValue }) => {
@@ -38,10 +28,6 @@ export const buscarVenta = createAsyncThunk(
   },
 );
 
-/*
-  AGREGAR
-*/
-
 export const agregarVenta = createAsyncThunk(
   "ventas/agregar",
   async (data, { rejectWithValue }) => {
@@ -54,10 +40,6 @@ export const agregarVenta = createAsyncThunk(
     }
   },
 );
-
-/*
-  CANCELAR
-*/
 
 export const cancelarVenta = createAsyncThunk(
   "ventas/cancelar",

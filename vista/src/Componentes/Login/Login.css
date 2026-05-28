@@ -39,10 +39,6 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* =========================
-   PANEL IZQUIERDO
-========================= */
-
 .login-image-section {
   width: 60%;
   position: relative;
@@ -81,10 +77,6 @@ body {
 
   opacity: 0.95;
 }
-
-/* =========================
-   PANEL DERECHO
-========================= */
 
 .login-form-section {
   width: 40%;
@@ -146,10 +138,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* =========================
-   INPUTS
-========================= */
-
 .input-group {
   display: flex;
   flex-direction: column;
@@ -185,10 +173,6 @@ body {
   border-color: #111;
 }
 
-/* =========================
-   BOTON LOGIN
-========================= */
-
 .login-button {
   margin-top: 10px;
 
@@ -211,10 +195,6 @@ body {
 .login-button:hover {
   opacity: 0.92;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1000px) {
   .login-card {

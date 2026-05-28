@@ -1,5 +1,3 @@
-// DashboardMetodosPago.jsx
-
 import { ResponsiveContainer, PieChart, Pie, Tooltip, Cell } from "recharts";
 
 const COLORS = ["#111827", "#374151", "#6b7280"];

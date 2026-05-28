@@ -1,11 +1,6 @@
-// CierreCajaActions.js
-
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../middleware";
 
-/*
-  Obtener resumen previo del cierre
-*/
 
 export const obtenerResumenCierre = createAsyncThunk(
   "cierreCaja/resumen",
@@ -20,9 +15,6 @@ export const obtenerResumenCierre = createAsyncThunk(
   },
 );
 
-/*
-  Realizar cierre de caja
-*/
 
 export const cerrarCaja = createAsyncThunk(
   "cierreCaja/cerrar",
@@ -37,9 +29,6 @@ export const cerrarCaja = createAsyncThunk(
   },
 );
 
-/*
-  Obtener mis cierres
-*/
 
 export const listarMisCierres = createAsyncThunk(
   "cierreCaja/misCierres",
@@ -54,9 +43,6 @@ export const listarMisCierres = createAsyncThunk(
   },
 );
 
-/*
-  Obtener todos los cierres
-*/
 
 export const listarCierres = createAsyncThunk(
   "cierreCaja/listar",
@@ -71,9 +57,6 @@ export const listarCierres = createAsyncThunk(
   },
 );
 
-/*
-  Buscar cierre por id
-*/
 
 export const buscarCierre = createAsyncThunk(
   "cierreCaja/buscar",

@@ -1,5 +1,3 @@
-// TurnosCajaController.cs
-
 using System.Security.Claims;
 using backend.Data;
 using backend.Dtos.TurnosCaja;
@@ -22,10 +20,6 @@ public class TurnosCajaController : ControllerBase
         _context = context;
     }
 
-    /*
-        Solo empleados
-    */
-
     private int ObtenerEmpleadoId()
     {
         var claim = User.FindFirst("EmpleadoId");
@@ -37,11 +31,6 @@ public class TurnosCajaController : ControllerBase
 
         return int.Parse(claim.Value);
     }
-
-    /*
-        GET:
-        api/turnoscaja/activo
-    */
 
     [HttpGet("activo")]
     public async Task<IActionResult> ObtenerTurnoActivo()
@@ -67,21 +56,12 @@ public class TurnosCajaController : ControllerBase
         }
     }
 
-    /*
-        POST:
-        api/turnoscaja/abrir
-    */
-
     [HttpPost("abrir")]
     public async Task<IActionResult> AbrirTurno(AbrirTurnoDto dto)
     {
         try
         {
             int empleadoId = ObtenerEmpleadoId();
-
-            /*
-                Temporal
-            */
 
             int sucursalId = dto.SucursalId;
 
@@ -118,11 +98,6 @@ public class TurnosCajaController : ControllerBase
             return Unauthorized(new { error = ex.Message });
         }
     }
-
-    /*
-    GET:
-    /TurnosCaja/abiertos
-*/
 
     [HttpGet("abiertos")]
     public async Task<ActionResult<List<TurnoAbiertoDto>>> ObtenerTurnosAbiertos()

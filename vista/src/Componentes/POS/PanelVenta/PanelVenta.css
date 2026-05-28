@@ -19,10 +19,6 @@
   overflow: hidden;
 }
 
-/* =========================
-   HEADER
-========================= */
-
 .pos-resumen-header {
   display: flex;
 
@@ -47,10 +43,6 @@
   color: #777;
 }
 
-/* =========================
-   ITEMS SCROLL
-========================= */
-
 .pos-resumen-items {
   flex: 1;
 
@@ -67,7 +59,6 @@
   padding-right: 4px;
 }
 
-/* Scrollbar */
 
 .pos-resumen-items::-webkit-scrollbar {
   width: 6px;
@@ -78,10 +69,6 @@
 
   border-radius: 20px;
 }
-
-/* =========================
-   ITEM
-========================= */
 
 .pos-item {
   display: flex;
@@ -111,10 +98,6 @@
   color: #777;
 }
 
-/* =========================
-   FOOTER FIJO
-========================= */
-
 .pos-footer {
   margin-top: 24px;
 
@@ -122,10 +105,6 @@
 
   background: white;
 }
-
-/* =========================
-   TOTALES
-========================= */
 
 .pos-resumen-totales {
   display: flex;
@@ -152,10 +131,6 @@
 
   border-top: 1px solid #ececec;
 }
-
-/* =========================
-   ACTIONS
-========================= */
 
 .pos-actions {
   margin-top: 24px;

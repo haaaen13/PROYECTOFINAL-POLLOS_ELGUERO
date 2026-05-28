@@ -16,10 +16,6 @@ public class VentaDto
 
     public int TurnoCajaId { get; set; }
 
-    /*
-        NUEVO
-    */
-
     public EmpleadoVentaDto Empleado { get; set; } = null!;
 
     public SucursalVentaDto Sucursal { get; set; } = null!;

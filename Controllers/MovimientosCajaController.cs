@@ -1,5 +1,3 @@
-// MovimientosCajaController.cs
-
 using backend.Data;
 using backend.Dtos.MovimientosCaja;
 using backend.Models;
@@ -22,10 +20,6 @@ public class MovimientosCajaController : ControllerBase
         _contexto = contexto;
     }
 
-    /*
-        Obtener empleado desde JWT
-    */
-
     private int ObtenerEmpleadoId()
     {
         var claim = User.FindFirst("EmpleadoId");
@@ -37,11 +31,6 @@ public class MovimientosCajaController : ControllerBase
 
         return int.Parse(claim.Value);
     }
-
-    /*
-        GET
-        api/movimientoscaja
-    */
 
     [HttpGet]
     public async Task<ActionResult<List<object>>> GetMovimientos()
@@ -85,19 +74,10 @@ public class MovimientosCajaController : ControllerBase
         return Ok(movimientos);
     }
 
-    /*
-        GET
-        api/movimientoscaja/mis-movimientos
-    */
-
     [HttpGet("mis-movimientos")]
     public async Task<ActionResult<List<object>>> GetMisMovimientos()
     {
         int empleadoId = ObtenerEmpleadoId();
-
-        /*
-            Buscar turno abierto
-        */
 
         var turno = await _contexto.TurnosCaja.FirstOrDefaultAsync(t =>
             t.EmpleadoId == empleadoId && t.Abierto
@@ -107,10 +87,6 @@ public class MovimientosCajaController : ControllerBase
         {
             return BadRequest(new { error = "No existe un turno abierto" });
         }
-
-        /*
-            Obtener movimientos del turno
-        */
 
         var movimientos = await _contexto
             .MovimientosCaja.Include(m => m.Empleado)
@@ -152,19 +128,10 @@ public class MovimientosCajaController : ControllerBase
         return Ok(movimientos);
     }
 
-    /*
-    POST
-    api/movimientoscaja
-*/
-
     [HttpPost]
     public async Task<ActionResult> CrearMovimiento([FromBody] CrearMovimientoCajaDto dto)
     {
         int empleadoId = ObtenerEmpleadoId();
-
-        /*
-            Buscar turno abierto
-        */
 
         var turno = await _contexto.TurnosCaja.FirstOrDefaultAsync(t =>
             t.EmpleadoId == empleadoId && t.Abierto
@@ -174,10 +141,6 @@ public class MovimientosCajaController : ControllerBase
         {
             return BadRequest(new { error = "No existe un turno abierto" });
         }
-
-        /*
-            Crear movimiento
-        */
 
         var movimiento = new MovimientoCaja
         {

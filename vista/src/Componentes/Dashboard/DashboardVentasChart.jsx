@@ -1,5 +1,3 @@
-// DashboardVentasChart.jsx
-
 import {
   ResponsiveContainer,
   LineChart,

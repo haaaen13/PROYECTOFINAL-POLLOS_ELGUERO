@@ -1,12 +1,6 @@
-// TurnosCajaAction.js
-
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import api from "../../middleware";
-
-/*
-  OBTENER TURNO ACTIVO
-*/
 
 export const obtenerTurnoActivo = createAsyncThunk(
   "turnosCaja/obtenerActivo",
@@ -21,10 +15,6 @@ export const obtenerTurnoActivo = createAsyncThunk(
     }
   },
 );
-
-/*
-  ABRIR TURNO
-*/
 
 export const abrirTurno = createAsyncThunk(
   "turnosCaja/abrir",

@@ -12,10 +12,6 @@ import { MovimientosCajaReducer } from "./MovimientosCaja/MovimientosCajaSlice";
 import { CierreCajaReducer } from "./CierreCaja/CierreCajaSlice";
 import { DashboardReducer } from "./Dashboard/DashboardSlice";
 
-/*
-    Persist config
-*/
-
 const persistConfig = {
   key: "auth",
 
@@ -24,15 +20,7 @@ const persistConfig = {
   whitelist: ["token", "usuario"],
 };
 
-/*
-    Persist reducer
-*/
-
 const persisAuthReducer = persistReducer(persistConfig, loginReducer);
-
-/*
-    Store
-*/
 
 export const store = configureStore({
   reducer: {
@@ -55,14 +43,6 @@ export const store = configureStore({
     }),
 });
 
-/*
-    Token interceptor
-*/
-
 setAuthToken(() => store.getState().auth.token);
-
-/*
-    Persistor
-*/
 
 export const persistor = persistStore(store);

@@ -1,5 +1,3 @@
-// DashboardProductosTop.jsx
-
 function DashboardProductosTop({ data }) {
   return (
     <div className="dashboard-panel">

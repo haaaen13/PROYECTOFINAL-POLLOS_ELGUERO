@@ -2,10 +2,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import api from "../../middleware";
 
-/*
-  LISTAR MOVIMIENTOS
-*/
-
 export const listarMovimientosCaja = createAsyncThunk(
   "movimientosCaja/listar",
 
@@ -20,10 +16,6 @@ export const listarMovimientosCaja = createAsyncThunk(
   },
 );
 
-/*
-  MIS MOVIMIENTOS
-*/
-
 export const listarMisMovimientos = createAsyncThunk(
   "movimientosCaja/misMovimientos",
 
@@ -37,10 +29,6 @@ export const listarMisMovimientos = createAsyncThunk(
     }
   },
 );
-
-/*
-  CREAR MOVIMIENTO
-*/
 
 export const crearMovimientoCaja = createAsyncThunk(
   "movimientosCaja/crear",

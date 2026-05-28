@@ -2,10 +2,6 @@ import { Navigate, Outlet } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 
-/*
-  ADMIN
-*/
-
 export function PrivateAdminRoute() {
   const token = useSelector((state) => state.auth.token);
 
@@ -21,10 +17,6 @@ export function PrivateAdminRoute() {
 
   return <Outlet />;
 }
-
-/*
-  EMPLEADO
-*/
 
 export function PrivateEmpleadoRoute() {
   const token = useSelector((state) => state.auth.token);

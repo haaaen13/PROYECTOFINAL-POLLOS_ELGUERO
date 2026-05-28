@@ -1,5 +1,3 @@
-// Dtos/Ventas/CreateDetalleVentaDto.cs
-
 namespace backend.Dtos.Ventas;
 
 public class CreateDetalleVentaDto

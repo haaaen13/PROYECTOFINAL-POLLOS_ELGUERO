@@ -2,10 +2,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import api from "../../middleware";
 
-/*
-  OBTENER DASHBOARD
-*/
-
 export const obtenerDashboard = createAsyncThunk(
   "dashboard/obtener",
   async (_, { rejectWithValue }) => {

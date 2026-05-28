@@ -1,5 +1,3 @@
-/* ModalCobro.css */
-
 .modal-cobro-overlay {
   position: fixed;
 
@@ -50,10 +48,6 @@
   }
 }
 
-/* =========================
-   HEADER
-========================= */
-
 .modal-cobro-header {
   padding: 24px;
 
@@ -84,10 +78,6 @@
   color: #111111;
 }
 
-/* =========================
-   BODY
-========================= */
-
 .modal-cobro-body {
   padding: 24px;
 
@@ -97,10 +87,6 @@
 
   gap: 22px;
 }
-
-/* =========================
-   RESUMEN
-========================= */
 
 .modal-resumen {
   display: flex;
@@ -142,10 +128,6 @@
   color: #111111;
 }
 
-/* =========================
-   FORM
-========================= */
-
 .modal-group {
   display: flex;
 
@@ -186,10 +168,6 @@
   border-color: #cfcfcf;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 .modal-cobro-footer {
   padding: 20px 24px;
 
@@ -199,10 +177,6 @@
 
   gap: 12px;
 }
-
-/* =========================
-   BUTTONS
-========================= */
 
 .btn-cerrar-modal,
 .btn-confirmar-modal {

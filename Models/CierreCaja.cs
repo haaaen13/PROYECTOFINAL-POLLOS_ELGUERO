@@ -28,10 +28,6 @@ public class CierreCaja
 
     public string? Observaciones { get; set; }
 
-    /*
-        Relaciones
-    */
-
     public int TurnoCajaId { get; set; }
 
     public TurnoCaja TurnoCaja { get; set; } = null!;

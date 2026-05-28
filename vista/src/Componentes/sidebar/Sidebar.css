@@ -21,10 +21,6 @@
   overflow-y: auto;
 }
 
-/* =========================
-   LOGO
-========================= */
-
 .sidebar-logo {
   margin-bottom: 45px;
   padding: 0 10px;
@@ -46,10 +42,6 @@
   font-size: 14px;
   color: #8b8b8b;
 }
-
-/* =========================
-   MENU
-========================= */
 
 .sidebar-menu {
   display: flex;
@@ -99,17 +91,9 @@
   justify-content: center;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 .sidebar-footer {
   margin-top: 20px;
 }
-
-/* =========================
-   LOGOUT BUTTON
-========================= */
 
 .logout-button {
   width: 100%;
@@ -140,10 +124,6 @@
   background: #ececec;
   color: #292929;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 900px) {
   .sidebar {

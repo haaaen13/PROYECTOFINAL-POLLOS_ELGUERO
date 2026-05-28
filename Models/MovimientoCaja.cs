@@ -14,10 +14,6 @@ public class MovimientoCaja
 
     public string Concepto { get; set; } = string.Empty;
 
-    /*
-        Relaciones
-    */
-
     public int TurnoCajaId { get; set; }
 
     public TurnoCaja TurnoCaja { get; set; } = null!;

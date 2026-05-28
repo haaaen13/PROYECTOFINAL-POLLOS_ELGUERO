@@ -1,5 +1,3 @@
-// components/Pagination/Pagination.jsx
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import "./Pagination.css";

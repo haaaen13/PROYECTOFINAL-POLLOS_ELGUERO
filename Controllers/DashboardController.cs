@@ -21,10 +21,6 @@ public class DashboardController : ControllerBase
     {
         var hoy = DateTime.UtcNow.Date;
 
-        /*
-            Ventas del día
-        */
-
         var ventasHoyLista = await _contexto
             .Ventas.Where(v => !v.Cancelada && v.FechaVenta.Date == hoy)
             .ToListAsync();
@@ -33,10 +29,6 @@ public class DashboardController : ControllerBase
 
         var numeroVentasHoy = ventasHoyLista.Count;
 
-        /*
-            Cards
-        */
-
         var productosActivos = await _contexto.Productos.CountAsync(p => p.Activo);
 
         var empleadosActivos = await _contexto.Empleados.CountAsync(e => e.Activo);
@@ -44,10 +36,6 @@ public class DashboardController : ControllerBase
         var sucursalesActivas = await _contexto.Sucursales.CountAsync(s => s.Activa);
 
         var ticketPromedio = numeroVentasHoy > 0 ? ventasHoy / numeroVentasHoy : 0;
-
-        /*
-            Ventas últimos 7 días
-        */
 
         var fechaInicio = hoy.AddDays(-6);
 
@@ -66,10 +54,6 @@ public class DashboardController : ControllerBase
             .OrderBy(v => v.Fecha)
             .ToList();
 
-        /*
-            Métodos de pago
-        */
-
         var metodosPago = (await _contexto.Ventas.Where(v => !v.Cancelada).ToListAsync())
             .GroupBy(v => v.MetodoPago)
             .Select(g => new MetodoPagoDto
@@ -79,10 +63,6 @@ public class DashboardController : ControllerBase
                 Total = g.Sum(v => v.Total),
             })
             .ToList();
-
-        /*
-            Productos top
-        */
 
         var productosTop = (await _contexto.DetalleVentas.Include(d => d.Producto).ToListAsync())
             .GroupBy(d => d.Producto.Nombre)
@@ -95,10 +75,6 @@ public class DashboardController : ControllerBase
             .OrderByDescending(p => p.CantidadVendida)
             .Take(5)
             .ToList();
-
-        /*
-            Últimas ventas
-        */
 
         var ultimasVentas = (
             await _contexto
@@ -121,10 +97,6 @@ public class DashboardController : ControllerBase
                 Empleado = v.TurnoCaja.Empleado.Nombre + " " + v.TurnoCaja.Empleado.ApellidoPaterno,
             })
             .ToList();
-
-        /*
-            Response
-        */
 
         return Ok(
             new DashboardDto

@@ -10,23 +10,11 @@ public class Venta
 
     public decimal Total { get; set; }
 
-    /*
-        FK NUEVA
-    */
-
     public int TurnoCajaId { get; set; }
 
     public TurnoCaja TurnoCaja { get; set; } = null!;
 
-    /*
-        Pago simplificado
-    */
-
     public MetodoPago MetodoPago { get; set; }
-
-    /*
-        Cancelaciones
-    */
 
     public bool Cancelada { get; set; } = false;
 

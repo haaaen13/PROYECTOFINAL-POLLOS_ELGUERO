@@ -23,10 +23,6 @@ function POS() {
 
   const [carrito, setCarrito] = useState([]);
 
-  /*
-    Estado para backend
-  */
-
   const [detalles, setDetalles] = useState([]);
 
   const productos = useSelector((store) => store.productos.Productos);
@@ -44,10 +40,6 @@ function POS() {
     goToPage,
     resetPage,
   } = usePagination(productosFiltrados, 12);
-
-  /*
-    CARRITO UI
-  */
 
   const agregarAlCarrito = (producto) => {
     const existe = carrito.find((p) => p.id === producto.id);
@@ -75,10 +67,6 @@ function POS() {
       },
     ]);
   };
-
-  /*
-    DETALLES BACKEND
-  */
 
   const agregarDetalle = (producto) => {
     const existe = detalles.find((d) => d.productoId === producto.id);
@@ -108,19 +96,11 @@ function POS() {
     ]);
   };
 
-  /*
-    AGREGAR GENERAL
-  */
-
   const agregarProducto = (producto) => {
     agregarAlCarrito(producto);
 
     agregarDetalle(producto);
   };
-
-  /*
-    CANCELAR
-  */
 
   const onCancelar = () => {
     setCarrito([]);

@@ -36,10 +36,6 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
-/* =========================
-   HEADER
-========================= */
-
 .modal-header {
   padding: 18px 22px;
 
@@ -87,10 +83,6 @@
 .modal-header button:hover {
   background: #ebebeb;
 }
-
-/* =========================
-   BODY
-========================= */
 
 .modal-body {
   padding: 20px 22px;
@@ -140,15 +132,9 @@
   border-color: #111111;
 }
 
-/* Inputs completos */
-
 .form-group.full {
   grid-column: span 2;
 }
-
-/* =========================
-   FOOTER
-========================= */
 
 .modal-footer {
   padding: 18px 22px;
@@ -202,10 +188,6 @@
 .save-btn:hover {
   background: #222222;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 700px) {
   .modal-container {

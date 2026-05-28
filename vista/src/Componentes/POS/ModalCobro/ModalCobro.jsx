@@ -1,5 +1,3 @@
-// ModalCobro.jsx
-
 import { useState } from "react";
 
 import "./ModalCobro.css";

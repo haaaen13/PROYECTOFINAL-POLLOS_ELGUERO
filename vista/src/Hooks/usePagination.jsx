@@ -1,5 +1,3 @@
-// hooks/usePagination.js
-
 import { useMemo, useState } from "react";
 
 function usePagination(data = [], itemsPerPage = 10) {

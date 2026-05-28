@@ -8,17 +8,11 @@
   gap: 0;
 }
 
-/* =========================
-   PRODUCTOS
-========================= */
-
 .productos-disponibles {
   width: calc(100% - 240px);
 
   padding-right: 24px;
 }
-
-/* Grid más compacto SOLO POS */
 
 .productos-disponibles .productos-grid {
   display: grid;
@@ -29,8 +23,6 @@
 
   margin-top: 24px;
 }
-
-/* Cards más pequeñas SOLO POS */
 
 .productos-disponibles .producto-card {
   border-radius: 16px;
@@ -66,10 +58,6 @@
   font-size: 12px;
 }
 
-/* =========================
-   PANEL DERECHO
-========================= */
-
 .pos-resumen {
   width: 240px;
 
@@ -93,10 +81,6 @@
 
   overflow-y: auto;
 }
-
-/* =========================
-   RESPONSIVE
-========================= */
 
 @media (max-width: 1400px) {
   .productos-disponibles .productos-grid {

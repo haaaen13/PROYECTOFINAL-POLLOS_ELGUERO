@@ -2,24 +2,18 @@ import "./App.css";
 
 import { Routes, Route, Navigate } from "react-router-dom";
 
-/*
-  COMPONENTES
-*/
 
 import Login from "./Componentes/Login";
-
 import Layout from "./Componentes/Layout/Layout";
 
-/*
-  ADMIN
-*/
-
+//Admin
 import Empleados from "./Componentes/Empleados";
 import Productos from "./Componentes/Productos/Productos";
 import Sucursales from "./Componentes/Sucursales/Sucursales";
 import Ventas from "./Componentes/Ventas/Ventas";
 import TurnosActivos from "./Componentes/TurnosActivos/TurnosActivos";
 
+//Empleado
 import PosContainer from "./Componentes/POS/PosContainer";
 import MisVentas from "./Componentes/MisVentas/MisVentas";
 import MisMovimientos from "./Componentes/MisMovimientos/MisMovimientos";

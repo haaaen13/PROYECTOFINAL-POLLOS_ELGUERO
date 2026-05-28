@@ -1,5 +1,3 @@
-// DashboardUltimasVentas.jsx
-
 function DashboardUltimasVentas({ data }) {
   return (
     <div className="dashboard-panel">

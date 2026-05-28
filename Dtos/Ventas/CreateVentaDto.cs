@@ -1,5 +1,3 @@
-// Dtos/Ventas/CreateVentaDto.cs
-
 using backend.Models.Enums;
 
 namespace backend.Dtos.Ventas;

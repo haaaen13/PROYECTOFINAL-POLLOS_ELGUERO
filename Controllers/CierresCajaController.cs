@@ -1,5 +1,3 @@
-// Controllers/CierresCajaController.cs
-
 using backend.Data;
 using backend.Dtos.CierreCaja;
 using backend.Models;
@@ -22,10 +20,6 @@ public class CierresCajaController : ControllerBase
         _contexto = contexto;
     }
 
-    /*
-        Obtener empleado desde JWT
-    */
-
     private int ObtenerEmpleadoId()
     {
         var claim = User.FindFirst("EmpleadoId");
@@ -38,19 +32,11 @@ public class CierresCajaController : ControllerBase
         return int.Parse(claim.Value);
     }
 
-    /*
-        GET
-        api/cierrescaja/resumen-turno
-    */
-
     [HttpGet("resumen-turno")]
     public async Task<ActionResult<ResumenCierreCajaDto>> GetResumenTurno()
     {
         int empleadoId = ObtenerEmpleadoId();
 
-        /*
-            Buscar turno abierto
-        */
 
         var turno = await _contexto
             .TurnosCaja.Include(t => t.Ventas)
@@ -62,15 +48,7 @@ public class CierresCajaController : ControllerBase
             return BadRequest(new { error = "No existe un turno abierto" });
         }
 
-        /*
-            Ventas válidas
-        */
-
         var ventasValidas = turno.Ventas.Where(v => !v.Cancelada).ToList();
-
-        /*
-            Cálculos
-        */
 
         decimal ventasEfectivo = ventasValidas
             .Where(v => v.MetodoPago == MetodoPago.Efectivo)
@@ -122,19 +100,10 @@ public class CierresCajaController : ControllerBase
         );
     }
 
-    /*
-        POST
-        api/cierrescaja
-    */
-
     [HttpPost]
     public async Task<ActionResult<CierreCajaDto>> CrearCierre([FromBody] CrearCierreCajaDto dto)
     {
         int empleadoId = ObtenerEmpleadoId();
-
-        /*
-            Buscar turno abierto
-        */
 
         var turno = await _contexto
             .TurnosCaja.Include(t => t.Ventas)
@@ -149,24 +118,12 @@ public class CierresCajaController : ControllerBase
             return BadRequest(new { error = "No existe un turno abierto" });
         }
 
-        /*
-            Validar cierre previo
-        */
-
         if (turno.CierreCaja != null)
         {
             return BadRequest(new { error = "Este turno ya fue cerrado" });
         }
 
-        /*
-            Ventas válidas
-        */
-
         var ventasValidas = turno.Ventas.Where(v => !v.Cancelada).ToList();
-
-        /*
-            Recalcular datos
-        */
 
         decimal ventasEfectivo = ventasValidas
             .Where(v => v.MetodoPago == MetodoPago.Efectivo)
@@ -193,10 +150,6 @@ public class CierresCajaController : ControllerBase
         decimal totalVentas = ventasValidas.Sum(v => v.Total);
 
         decimal diferencia = dto.EfectivoReal - efectivoEsperado;
-
-        /*
-            Crear cierre
-        */
 
         var cierre = new CierreCaja
         {
@@ -228,10 +181,6 @@ public class CierresCajaController : ControllerBase
 
             EmpleadoId = empleadoId,
         };
-
-        /*
-            Cerrar turno
-        */
 
         turno.Abierto = false;
 
@@ -290,11 +239,6 @@ public class CierresCajaController : ControllerBase
             }
         );
     }
-
-    /*
-        GET
-        api/cierrescaja/mis-cierres
-    */
 
     [HttpGet("mis-cierres")]
     public async Task<ActionResult<List<CierreCajaDto>>> GetMisCierres()
@@ -357,11 +301,6 @@ public class CierresCajaController : ControllerBase
 
         return Ok(cierres);
     }
-
-    /*
-        GET
-        api/cierrescaja
-    */
 
     [HttpGet]
     public async Task<ActionResult<List<CierreCajaDto>>> GetCierres()
