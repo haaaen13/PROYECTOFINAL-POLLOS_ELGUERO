@@ -3,3 +3,4 @@
 .vs/
 appsettings.json
 appsettings.Development.json
+vista/.env
